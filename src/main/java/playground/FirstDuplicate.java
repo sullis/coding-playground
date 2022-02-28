@@ -12,8 +12,6 @@ import java.util.Set;
  *
  */
 public class FirstDuplicate {
-    private static int[] INPUT = { 1, 5, 3, 4, 3, 2, 2, 3, 1, 4 };
-
     static class Solution1 {
         public static int firstDuplicate(int[] input) {
             int minimumIndexOfSecondDuplicate = Integer.MAX_VALUE;
