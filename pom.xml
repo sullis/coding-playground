@@ -4,7 +4,7 @@
 
   <!-- Project identification section -->
   <groupId>io.github.sullis</groupId>
-  <artifactId>java-httpclient-example</artifactId>
+  <artifactId>coding-playground</artifactId>
   <packaging>jar</packaging>
   <name>coding-playground</name>
   <version>0.0.1-SNAPSHOT</version>
