@@ -35,7 +35,7 @@ public class EncodedString {
     }
 
     public static String process(String input) {
-      StringBuilder sb = new StringBuilder();
+      StringBuilder result = new StringBuilder();
       StringBuilder digits = new StringBuilder();
       for (int position = 0; position < input.length(); position++) {
         char c = input.charAt(position);
@@ -44,18 +44,18 @@ public class EncodedString {
           continue;
         } else {
           if (digits.length() == 0) {
-            sb.append(c);
+            result.append(c);
           }
           else {
             int n = Integer.parseInt(digits.toString());
             for (int i = 0; i < n; i++) {
-              sb.append(c);
+              result.append(c);
             }
             digits.setLength(0);
           }
         }
       }
-      return sb.toString();
+      return result.toString();
     }
   }
 }
