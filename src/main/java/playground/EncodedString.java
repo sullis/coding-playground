@@ -34,22 +34,22 @@ public class EncodedString {
 
     public static String process(String input) {
       StringBuilder sb = new StringBuilder();
-      StringBuilder number = new StringBuilder();
+      StringBuilder digits = new StringBuilder();
       for (int position = 0; position < input.length(); position++) {
         char c = input.charAt(position);
         if (Character.isDigit(c)) {
-          number.append(c);
+          digits.append(c);
           continue;
         } else {
-          if (number.length() == 0) {
+          if (digits.length() == 0) {
             sb.append(c);
           }
           else {
-            int n = Integer.parseInt(number.toString());
+            int n = Integer.parseInt(digits.toString());
             for (int i = 0; i < n; i++) {
               sb.append(c);
             }
-            number.setLength(0);
+            digits.setLength(0);
           }
         }
       }
