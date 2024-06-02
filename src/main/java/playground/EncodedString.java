@@ -1,5 +1,6 @@
 package playground;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -48,9 +49,9 @@ public class EncodedString {
           }
           else {
             int n = Integer.parseInt(digits.toString());
-            for (int i = 0; i < n; i++) {
-              result.append(c);
-            }
+            char[] chars = new char[n];
+            Arrays.fill(chars, c);
+            result.append(chars);
             digits.setLength(0);
           }
         }
