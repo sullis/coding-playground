@@ -19,6 +19,8 @@ public class EncodedString {
       "a3b4c", "abbbcccc",
       "2ab4c", "aabcccc",
       "a", "a",
+      "1a", "a",
+      "10a", "aaaaaaaaaa",
       "abc", "abc",
       "", ""
   );
