@@ -8,17 +8,17 @@ import java.util.stream.Collectors;
 /*
  * Given a string of words, find the K most frequent words
 
-  Whitespace
-  Periods
-  Commas
+  Words separated by:
+   - Whitespace
+   - Periods
+   - Commas
 
   Period or comma will be followed by a space
 
-
-   Edge cases:  
+  Edge cases:
       Upper case, Mixed case, Lower case words
       All whitespace
-      All punctation
+      All punctuation
       empty string
 
  */
@@ -49,6 +49,7 @@ public class Top_K_Words {
 
     return map.entrySet().stream()
         .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+        .sorted(Map.Entry.comparingByValue())
         .limit(k)
         .map(e -> e.getKey())
         .collect(Collectors.toList());
