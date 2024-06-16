@@ -63,6 +63,12 @@ public class MovingAverageCalculator {
     }
 
     public static void main(String[] args) {
+        MovingAverageCalculator calc0 = new MovingAverageCalculator(3);
+        calc0.record(2);
+        calc0.record(4);
+        calc0.record(3);
+        System.out.println("Avg: " + calc0.currentAvg());
+
         MovingAverageCalculator calculator = new MovingAverageCalculator(3);
         calculator.record(2);
         calculator.record(4);
