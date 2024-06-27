@@ -29,11 +29,11 @@ StringTokenizer
 
 Data Structures:
  Stack
-    push ( "(")
-    push( "add")
-    push( 3 )
-    push( 7 )
-    push( ")" )
+    push("(")
+    push("add")
+    push("3")
+    push("7")
+    push(")")
 
 Iterative solution vs Recursive solution ?
 
