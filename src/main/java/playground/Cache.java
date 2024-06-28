@@ -10,6 +10,4 @@ public interface Cache<K, V> {
     int size();
 
     boolean isEmpty();
-    void clear();
-
 }
