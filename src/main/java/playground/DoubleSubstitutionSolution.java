@@ -6,7 +6,9 @@ import java.util.*;
 
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DoubleSubstitutionSolution {
 
@@ -51,7 +53,6 @@ public class DoubleSubstitutionSolution {
          *  of words from the supplied collection of valid words.
          */
         public Set<String> decrypt(Map<String, String> key, String ciphertext) {
-            // System.out.println("validWords: " + validWords);
             System.out.println("decrypt ciphertext: " + ciphertext);
             System.out.println("decrypt kvMap: " + key);
 
@@ -153,14 +154,16 @@ public class DoubleSubstitutionSolution {
         Map<String, String> kvMap = Map.of(
             "a", "ab",
             "b", "cd",
-            "t", "ef"
+            "t", "ab"
             );
 
         final String plaintext = "bat";
         final String ciphertext = ds.encrypt(kvMap, plaintext);
-        assertEquals("cdabef", ciphertext);
+        assertEquals("cdabab", ciphertext);
 
-        assertEquals(Set.of("bat"), ds.decrypt(kvMap, ciphertext));
+        Set<String> decryptResult = ds.decrypt(kvMap, ciphertext);
+        assertTrue(decryptResult.contains("bat"));
+        decryptResult.forEach(s -> assertTrue(validWords.contains(s)));
     }
 }
 
