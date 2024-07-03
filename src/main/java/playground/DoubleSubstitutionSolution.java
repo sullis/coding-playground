@@ -16,6 +16,8 @@ public class DoubleSubstitutionSolution {
 
     @Test
     public void doubleSubstitutionTest() {
+        System.out.println("running: doubleSubstitutionTest");
+
         Map<String, String> key = new HashMap<>();
         key.put("a", "ba");
         key.put("b", "ab");
@@ -30,10 +32,11 @@ public class DoubleSubstitutionSolution {
         assertEquals("", ds.encrypt(new HashMap<String, String>(), "a"));
 
         assertEquals(
-            new HashSet<String>(Arrays.asList(new String[] {"man"})), ds.decrypt(key, "cabacc"));
+            Set.of("man"),
+            ds.decrypt(key, "cabacc"));
 
         assertEquals(
-            new HashSet<String>(Arrays.asList(new String[] {"bat", "tab", "tat"})),
+            Set.of("bat", "tab", "tat"),
             ds.decrypt(key, "abbaab"));
     }
 
@@ -134,6 +137,7 @@ public class DoubleSubstitutionSolution {
     }
 
     public static void main(String[] args) {
+
         Set<String> validWords = new TreeSet<>();
         // Read the word list in from a file
         try {
@@ -151,19 +155,7 @@ public class DoubleSubstitutionSolution {
         // Create DoubleSubstitution instance
         ds = new DoubleSubstitution(validWords);
 
-        Map<String, String> kvMap = Map.of(
-            "a", "ab",
-            "b", "cd",
-            "t", "ab"
-            );
-
-        final String plaintext = "bat";
-        final String ciphertext = ds.encrypt(kvMap, plaintext);
-        assertEquals("cdabab", ciphertext);
-
-        Set<String> decryptResult = ds.decrypt(kvMap, ciphertext);
-        assertTrue(decryptResult.contains("bat"));
-        decryptResult.forEach(s -> assertTrue(validWords.contains(s)));
+        new DoubleSubstitutionSolution().doubleSubstitutionTest();
     }
 }
 
