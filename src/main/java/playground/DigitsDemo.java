@@ -16,12 +16,13 @@ public class DigitsDemo {
         List<Integer> result  = new ArrayList<>();
 
         String numberString = "" + number;
+        int multiplier = (int) Math.pow(10, numberString.length() - 1);
         for (int i = 0; i < numberString.length(); i++) {
            int digit = Character.getNumericValue(numberString.charAt(i));
-           int multiplier = (int) Math.pow(10, (numberString.length() - 1 - i));
            System.out.println("digit: " + digit);
            System.out.println("multiplier: " + multiplier);
            result.add(digit * multiplier);
+           multiplier = multiplier / 10;
         }
 
         return result;
