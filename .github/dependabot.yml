@@ -1,3 +1,4 @@
+# Updated to trigger dependabot to recreate PRs - 2026-02-15
 version: 2
 updates:
   - package-ecosystem: "maven"
